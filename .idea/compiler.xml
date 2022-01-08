@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="cscb869hospital.cscb869hospital.main" target="11" />
+      <module name="cscb869hospital.cscb869hospital.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
