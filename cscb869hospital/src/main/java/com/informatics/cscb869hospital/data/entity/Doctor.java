@@ -25,5 +25,6 @@ public class Doctor extends Person{
 
     @ManyToOne
     @JoinColumn(name = "hospital_id")
+    @JsonIgnoreProperties("doctors")
     private Hospital hospital;
 }

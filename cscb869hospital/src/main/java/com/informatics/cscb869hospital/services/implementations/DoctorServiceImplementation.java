@@ -19,7 +19,25 @@ public class DoctorServiceImplementation implements DoctorService {
     }
 
     @Override
+    public Doctor getDoctor(long id) {
+        return doctorRepository.getById(id);
+    }
+
+    @Override
     public Doctor create(Doctor doctor) {
         return doctorRepository.save(doctor);
+    }
+
+    @Override
+    public Doctor updateDoctor(long id, Doctor doctor) {
+        doctor.setId(id);
+        return doctorRepository.save(doctor);
+    }
+
+    @Override
+    public void deleteDoctor(long id) {
+        Doctor doctor = doctorRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid hospital id: " + id));
+        doctorRepository.deleteById(id);
     }
 }

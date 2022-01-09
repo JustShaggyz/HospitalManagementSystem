@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.print.Doc;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -25,5 +26,13 @@ public class Record extends BaseEntity{
     @JsonIgnoreProperties("record")
     private List<Visit> visits;
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Record record = (Record) o;
+        return patient.equals(record.patient);
+    }
 
 }

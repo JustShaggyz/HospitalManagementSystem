@@ -18,4 +18,6 @@ public class Patient extends Person{
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor gp;
+
+
 }
