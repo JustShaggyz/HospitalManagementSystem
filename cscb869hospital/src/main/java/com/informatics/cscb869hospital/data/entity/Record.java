@@ -5,11 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.print.Doc;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,6 +21,11 @@ public class Record extends BaseEntity{
     @OneToMany(mappedBy = "record")
     @JsonIgnoreProperties("record")
     private List<Visit> visits;
+
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    @JsonIgnoreProperties("records")
+    private Hospital hospital;
 
 
     @Override

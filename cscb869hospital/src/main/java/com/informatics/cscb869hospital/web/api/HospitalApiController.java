@@ -1,4 +1,4 @@
-package com.informatics.cscb869hospital.controllers.api;
+package com.informatics.cscb869hospital.web.api;
 
 import com.informatics.cscb869hospital.data.entity.Doctor;
 import com.informatics.cscb869hospital.data.entity.Hospital;

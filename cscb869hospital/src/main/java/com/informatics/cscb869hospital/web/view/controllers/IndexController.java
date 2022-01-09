@@ -1,4 +1,4 @@
-package com.informatics.cscb869hospital.controllers.view;
+package com.informatics.cscb869hospital.web.view.controllers;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ public class IndexController {
 
     @GetMapping
     public String getIndex(Model model) {
-        final String welcomeMessage = "Welcome to the School Management System!";
+        final String welcomeMessage = "Welcome to the Hospital Management System!";
         model.addAttribute("welcome", welcomeMessage);
         return "index";
     }

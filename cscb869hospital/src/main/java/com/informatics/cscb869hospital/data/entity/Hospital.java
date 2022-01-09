@@ -24,4 +24,8 @@ public class Hospital extends BaseEntity{
     @JsonIgnoreProperties("hospital")
     private List<Doctor> doctors;
 
+    @OneToMany(mappedBy = "hospital")
+    @JsonIgnoreProperties("hospital")
+    private List<Record> records;
+
 }
