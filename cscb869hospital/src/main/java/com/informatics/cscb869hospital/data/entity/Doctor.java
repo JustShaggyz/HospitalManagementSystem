@@ -22,4 +22,8 @@ public class Doctor extends Person{
     @OneToMany(mappedBy = "gp")
     @JsonIgnoreProperties("gp")
     private List<Patient> patients;
+
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 }

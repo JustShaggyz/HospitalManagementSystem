@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface HospitalService {
     List<Hospital> getHospitals();
-    Hospital getHospital();
+    Hospital getHospital(long id);
     Hospital create(Hospital hospital);
     Hospital updateHospital(long id, Hospital hospital);
     void deleteHospital(long id);
