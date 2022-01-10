@@ -13,4 +13,5 @@ import java.util.List;
 public class HospitalDTO {
     private long id;
     private String name;
+
 }

@@ -26,7 +26,7 @@ public class RecordServiceImplementation implements RecordService {
     @Override
     public Record create(Record record) {
         List<Record> records = this.getRecords();
-        return records.contains(record) ? null : record;
+        return records.contains(record) ? null : recordRepository.save(record);
     }
 
     @Override

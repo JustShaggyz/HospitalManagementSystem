@@ -1,7 +1,7 @@
-package com.informatics.cscb869hospital.dto.doctor;
+package com.informatics.cscb869hospital.dto.patient;
 
+import com.informatics.cscb869hospital.data.entity.Doctor;
 import com.informatics.cscb869hospital.data.entity.Hospital;
-import com.informatics.cscb869hospital.data.entity.Specialty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,13 +10,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @NoArgsConstructor
-public class DoctorHospitalDTO {
+@ToString
+public class CreatePatientDTO {
     private long id;
-    private String doctorId;
-    private Specialty specialty;
-    private boolean isGp;
     private String name;
+    private String isHealthInsured;
     private Hospital hospital;
-
-
+    private Doctor gp;
 }

@@ -27,4 +27,9 @@ public class Doctor extends Person{
     @JoinColumn(name = "hospital_id")
     @JsonIgnoreProperties("doctors")
     private Hospital hospital;
+
+    @Override
+    public String toString() {
+        return super.toString() + this.specialty;
+    }
 }

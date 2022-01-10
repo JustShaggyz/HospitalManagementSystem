@@ -18,6 +18,7 @@ public class DoctorServiceImplementation implements DoctorService {
     private final DoctorRepository doctorRepository;
     private final ModelMapper modelMapper;
 
+    @Override
     public List<DoctorHospitalDTO> getAllDoctorHospitals() {
         return doctorRepository.findAll().stream()
                 .map(this::convertToDoctorHospitalDTO)

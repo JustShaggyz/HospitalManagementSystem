@@ -27,4 +27,9 @@ public abstract class Person extends BaseEntity{
     public int hashCode() {
         return Objects.hash(egn);
     }
+
+    @Override
+    public String toString() {
+        return name + " ";
+    }
 }
