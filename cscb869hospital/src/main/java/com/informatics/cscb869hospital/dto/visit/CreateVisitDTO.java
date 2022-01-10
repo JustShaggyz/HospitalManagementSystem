@@ -1,22 +1,20 @@
-package com.informatics.cscb869hospital.data.entity;
+package com.informatics.cscb869hospital.dto.visit;
 
+import com.informatics.cscb869hospital.data.entity.Doctor;
+import com.informatics.cscb869hospital.data.entity.Record;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "visit")
-public class Visit extends BaseEntity{
-    @ManyToOne
-    @JoinColumn(name = "record_id")
+@ToString
+public class CreateVisitDTO {
     private Record record;
-    @OneToOne
     private Doctor doctor;
     private LocalDate visitationDate;
     private String diagnose;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<h4>Create Record</h4>
+<div class="col-6">
+    <form action="#" th:action="@{/visits/create}" th:object="${visit}" method="post">
+
+        <div class="form-group">
+            <label for="record">Record</label>
+            <select class="form-control" th:field="${visit.record}" id="record">
+                <option value="">Select record</option>
+                <option th:each="record : ${records}" th:value="${record.id}" th:text="${record.patient}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="doctor">Doctor</label>
+            <select class="form-control" th:field="${visit.doctor}" id="doctor">
+                <option value="">Select Doctor</option>
+                <option th:each="doctor : ${doctors}" th:value="${doctor.id}"
+                        th:text="${doctor.name} + '   ' + ${doctor.specialty}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="diagnose">Diagnose</label>
+            <input class="form-control" type="text" th:field="${visit.diagnose}" placeholder="Diagnose" id="diagnose">
+            <span class="text-danger" th:if="${#fields.hasErrors('diagnose')}" th:errors="*{diagnose}">Diagnose Error</span>
+        </div>
+        <div class="form-group">
+            <label for="treatment">Treatment</label>
+            <input class="form-control" type="text" th:field="${visit.treatment}" placeholder="Treatment" id="treatment">
+            <span class="text-danger" th:if="${#fields.hasErrors('treatment')}" th:errors="*{treatment}">Treatment Error</span>
+        </div>
+        <div class="form-group">
+            <label for="sickLeave">SickLeave</label>
+            <input type="number" id="sickLeave" name="sickLeave" min="0" max="100">
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="sickLeave">SickLeave</label>-->
+<!--            <input class="form-control" type="text" th:field="${visit.sickLeave}" placeholder="Sick Leave days" id="sickLeave">-->
+<!--            <span class="text-danger" th:if="${#fields.hasErrors('sickLeave')}" th:errors="*{sickLeave}">SickLeave Error</span>-->
+<!--        </div>-->
+
+
+        <button type="submit" class="btn btn-primary">Save Record</button>
+    </form>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

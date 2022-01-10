@@ -1,10 +1,12 @@
 package com.informatics.cscb869hospital.services;
 
 import com.informatics.cscb869hospital.data.entity.Visit;
+import com.informatics.cscb869hospital.dto.visit.CreateVisitDTO;
+import com.informatics.cscb869hospital.dto.visit.VisitDTO;
+
+import java.util.List;
 
 public interface VisitService {
-    Visit create(Visit visit);
-    Visit getVisit(long id);
-    Visit updateVisit(long id, Visit visit);
-    void deleteVisit(long id);
+    Visit create(CreateVisitDTO visit);
+    List<VisitDTO> getVisits();
 }

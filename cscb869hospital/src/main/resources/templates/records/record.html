@@ -6,18 +6,31 @@
 <h4>Record:</h4>
 <div class="col-6">
     <table class="table table-hover">
-        <th>Id</th>
         <th>Patient</th>
         <th>Hospital</th>
         <tr>
-            <td th:text="${record.id}"></td>
             <td th:text="${record.patient}"></td>
             <td th:text="${record.hospital}"></td>
         </tr>
     </table>
 
 
-    //visits
+    <table th:if="${record.visits.size()>0}" class="table table-hover">
+        <th>Visit id</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Diagnose</th>
+        <th>Treatment</th>
+        <th>Sick Leave</th>
+        <tr th:each="visit : ${record.visits}">
+            <td th:text="${visit.id}"></td>
+            <td th:text="${visit.doctor}"></td>
+            <td th:text="${visit.visitationDate}"></td>
+            <td th:text="${visit.diagnose}"></td>
+            <td th:text="${visit.treatment}"></td>
+            <td th:text="${visit.sickLeave}"></td>
+        </tr>
+    </table>
 </div>
 <footer th:replace="fragments :: footer"></footer>
 </body>
