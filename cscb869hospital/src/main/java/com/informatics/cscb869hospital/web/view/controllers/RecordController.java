@@ -30,12 +30,29 @@ public class RecordController {
     private final HospitalService hospitalService;
     private final PatientService patientService;
 
+    @RequestMapping
+    public String processToGetRecord(Model model) {
+        model.addAttribute("record", new CreateRecordViewModel());
+        return "/records/get-record";
+    }
 
-    @GetMapping("/{id}")
-    public String getRecord(Model model, @PathVariable Long id) {
+
+//    @GetMapping("/{id}")
+//    public String getRecord(Model model, @PathVariable Long id) {
+//        model.addAttribute("record", modelMapper.map(recordService.getRecord(id), RecordViewModel.class));
+//        return "/records/record";
+//    }
+@PostMapping("/getrecord")
+public String getRecord(@Valid @ModelAttribute("record") CreateRecordViewModel record,
+    BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "/records";
+        }
+        Long id = record.getId();
         model.addAttribute("record", modelMapper.map(recordService.getRecord(id), RecordViewModel.class));
         return "/records/record";
-    }
+
+}
 
 
     @GetMapping("/create-record")
