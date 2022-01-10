@@ -11,15 +11,16 @@ import com.informatics.cscb869hospital.web.view.model.visit.CreateVisitViewModel
 import com.informatics.cscb869hospital.web.view.model.visit.VisitViewModel;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @AllArgsConstructor
@@ -57,5 +58,25 @@ public class VisitController {
 
     private VisitViewModel convertToVisitViewModel(VisitDTO visitDTO) {
         return modelMapper.map(visitDTO, VisitViewModel.class);
+    }
+
+
+    @GetMapping("/search-diagnose")
+    public String processSearchDiagnoseForm() {
+        return "/visits/search-diagnose";
+    }
+
+    @GetMapping("/diagnose")
+    public String getPatientsByDiagnose(Model model, @RequestParam String diagnose) {
+        List<VisitViewModel> visits = visitService
+                .getVisitsByDiagnose(diagnose)
+                .stream()
+                .map(this::convertToVisitViewModel)
+                .collect(Collectors.toList());
+        for (VisitViewModel visit: visits) {
+            visit.setPatient(visit.getRecord().getPatient());
+        }
+        model.addAttribute("visits", visits);
+        return "/visits/visits";
     }
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public interface VisitService {
     Visit create(CreateVisitDTO visit);
     List<VisitDTO> getVisits();
+    List<VisitDTO> getVisitsByDiagnose(String diagnose);
 }

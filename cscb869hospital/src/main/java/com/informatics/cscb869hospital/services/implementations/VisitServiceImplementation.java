@@ -32,6 +32,13 @@ public class VisitServiceImplementation implements VisitService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<VisitDTO> getVisitsByDiagnose(String diagnose) {
+        return visitRepository.findAllByDiagnose(diagnose).stream()
+                .map(this::convertToVisitDTO)
+                .collect(Collectors.toList());
+    }
+
     private VisitDTO convertToVisitDTO(Visit visit) {
         return modelMapper.map(visit, VisitDTO.class);
     }

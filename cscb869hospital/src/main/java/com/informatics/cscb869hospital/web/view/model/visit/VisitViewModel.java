@@ -1,6 +1,7 @@
 package com.informatics.cscb869hospital.web.view.model.visit;
 
 import com.informatics.cscb869hospital.data.entity.Doctor;
+import com.informatics.cscb869hospital.data.entity.Patient;
 import com.informatics.cscb869hospital.data.entity.Record;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,4 +20,5 @@ public class VisitViewModel {
     private String diagnose;
     private String treatment;
     private int sickLeave;
+    private Patient patient;
 }

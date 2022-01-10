@@ -14,6 +14,7 @@
         <th>Specialty</th>
         <th>Gp</th>
         <th>Hospital Name</th>
+        <th>Number of patients</th>
         <tr th:each="doctor : ${doctors}">
             <td th:text="${doctor.id}"></td>
             <td th:text="${doctor.name}"></td>
@@ -22,6 +23,7 @@
             <td th:text="${doctor.specialty}"></td>
             <td th:text="${doctor.isGp}"></td>
             <td th:text="${doctor.hospital}"></td>
+            <td th:text="${doctor.numberOfPatients}"></td>
         </tr>
     </table>
 </div>

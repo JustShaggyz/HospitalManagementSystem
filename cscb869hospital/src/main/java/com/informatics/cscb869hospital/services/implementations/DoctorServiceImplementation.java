@@ -20,9 +20,13 @@ public class DoctorServiceImplementation implements DoctorService {
 
     @Override
     public List<DoctorHospitalDTO> getAllDoctorHospitals() {
-        return doctorRepository.findAll().stream()
+        List<DoctorHospitalDTO> listOfDoctors = doctorRepository.findAll().stream()
                 .map(this::convertToDoctorHospitalDTO)
                 .collect(Collectors.toList());
+        for (DoctorHospitalDTO doctor:listOfDoctors) {
+            doctor.setNumberOfPatients(doctor.getPatients().size());
+        }
+        return listOfDoctors;
     }
 
     @Override

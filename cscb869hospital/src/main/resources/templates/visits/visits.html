@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="col-6">
+    <h3 th:unless="${visits} and ${visits.size()}">There are no visits!</h3>
+    <table th:if="${visits.size()>0}" class="table table-hover">
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Diagnose</th>
+        <th>Treatment</th>
+        <th>Sick Leave</th>
+        <tr th:each="visit : ${visits}">
+            <td th:text="${visit.patient}"></td>
+            <td th:text="${visit.doctor}"></td>
+            <td th:text="${visit.visitationDate}"></td>
+            <td th:text="${visit.diagnose}"></td>
+            <td th:text="${visit.treatment}"></td>
+            <td th:text="${visit.sickLeave}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

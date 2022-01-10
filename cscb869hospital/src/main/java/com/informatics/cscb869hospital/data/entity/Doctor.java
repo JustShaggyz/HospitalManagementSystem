@@ -28,6 +28,8 @@ public class Doctor extends Person{
     @JsonIgnoreProperties("doctors")
     private Hospital hospital;
 
+    private int numberOfPatients;
+
     @Override
     public String toString() {
         return super.toString() + this.specialty;

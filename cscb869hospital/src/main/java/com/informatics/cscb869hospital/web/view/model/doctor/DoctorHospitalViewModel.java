@@ -15,4 +15,5 @@ public class DoctorHospitalViewModel {
     private boolean isGp;
     private String name;
     private Hospital hospital;
+    private int numberOfPatients;
 }
