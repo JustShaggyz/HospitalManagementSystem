@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<h4>Record:</h4>
+<div class="col-6">
+    <table class="table table-hover">
+        <th>Id</th>
+        <th>Patient</th>
+        <th>Hospital</th>
+        <tr>
+            <td th:text="${record.id}"></td>
+            <td th:text="${record.patient}"></td>
+            <td th:text="${record.hospital}"></td>
+        </tr>
+    </table>
+
+
+    //visits
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

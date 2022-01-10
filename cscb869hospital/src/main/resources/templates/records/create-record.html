@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<h4>Create Record</h4>
+<div class="col-6">
+    <form action="#" th:action="@{/records/create}" th:object="${record}" method="post">
+
+        <div class="form-group">
+            <label for="patient">Patient</label>
+            <select class="form-control" th:field="${record.patient}" id="patient">
+                <option value="">Select patient</option>
+                <option th:each="patient : ${patients}" th:value="${patient.id}" th:text="${patient.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="hospital">Hospital</label>
+            <select class="form-control" th:field="${record.hospital}" id="hospital">
+                <option value="">Select Hospital</option>
+                <option th:each="hospital : ${hospitals}" th:value="${hospital.id}"
+                        th:text="${hospital.name}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Record</button>
+    </form>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
