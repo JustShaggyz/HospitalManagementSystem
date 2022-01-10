@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 public class DoctorHospitalViewModel {
     private long id;
+    private String egn;
     private String doctorId;
     private Specialty specialty;
     private boolean isGp;

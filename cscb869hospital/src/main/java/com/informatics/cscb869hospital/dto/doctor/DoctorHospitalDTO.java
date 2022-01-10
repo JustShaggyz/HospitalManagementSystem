@@ -12,6 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class DoctorHospitalDTO {
     private long id;
+    private String egn;
     private String doctorId;
     private Specialty specialty;
     private boolean isGp;

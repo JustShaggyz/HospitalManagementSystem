@@ -12,6 +12,11 @@
             <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
         </div>
         <div class="form-group">
+            <label for="egn">EGN</label>
+            <input class="form-control" type="text" th:field="${patient.egn}" placeholder="Egn" id="egn">
+            <span class="text-danger" th:if="${#fields.hasErrors('egn')}" th:errors="*{egn}">Egn Error</span>
+        </div>
+        <div class="form-group">
             <label for="gp">Gp</label>
             <select class="form-control" th:field="${patient.gp}" id="gp">
                 <option value="">Select gp</option>

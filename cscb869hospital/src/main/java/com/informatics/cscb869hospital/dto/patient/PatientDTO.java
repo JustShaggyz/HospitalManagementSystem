@@ -14,6 +14,7 @@ import lombok.ToString;
 public class PatientDTO {
     private long id;
     private String name;
+    private String egn;
     private String isHealthInsured;
     private Hospital hospital;
     private Doctor gp;

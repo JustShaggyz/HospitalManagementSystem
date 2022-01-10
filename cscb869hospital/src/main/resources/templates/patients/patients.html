@@ -3,18 +3,20 @@
 <head th:replace="fragments :: head"></head>
 <body>
 <header th:replace="fragments :: header"></header>
-<h4>Doctors in hospitals:</h4>
+<h4>Patients in hospitals:</h4>
 <div class="col-6">
     <h3 th:unless="${patients} and ${patients.size()}">There are no patients!</h3>
     <table th:if="${patients.size()>0}" class="table table-hover">
         <th>Id</th>
         <th>Name</th>
+        <th>Egn</th>
         <th>Is health insured</th>
         <th>Gp</th>
         <th>Hospital Name</th>
         <tr th:each="patient : ${patients}">
             <td th:text="${patient.id}"></td>
             <td th:text="${patient.name}"></td>
+            <td th:text="${patient.egn}"></td>
             <td th:text="${patient.isHealthInsured}"></td>
             <td th:text="${patient.gp}"></td>
             <td th:text="${patient.hospital}"></td>

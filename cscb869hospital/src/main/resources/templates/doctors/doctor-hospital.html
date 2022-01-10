@@ -9,6 +9,7 @@
     <table th:if="${doctors.size()>0}" class="table table-hover">
         <th>Id</th>
         <th>Name</th>
+        <th>EGN</th>
         <th>DoctorId</th>
         <th>Specialty</th>
         <th>Gp</th>
@@ -16,6 +17,7 @@
         <tr th:each="doctor : ${doctors}">
             <td th:text="${doctor.id}"></td>
             <td th:text="${doctor.name}"></td>
+            <td th:text="${doctor.egn}"></td>
             <td th:text="${doctor.doctorId}"></td>
             <td th:text="${doctor.specialty}"></td>
             <td th:text="${doctor.isGp}"></td>

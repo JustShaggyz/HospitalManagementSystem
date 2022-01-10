@@ -13,6 +13,7 @@ import lombok.ToString;
 @ToString
 public class CreateDoctorDTO {
     private long id;
+    private String egn;
     private String doctorId;
     private Specialty specialty;
     private boolean isGp;

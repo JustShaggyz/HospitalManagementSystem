@@ -10,6 +10,7 @@ import lombok.Setter;
 public class CreatePatientViewModel {
     private long id;
     private String name;
+    private String egn;
     private String isHealthInsured;
     private Hospital hospital;
     private Doctor gp;
