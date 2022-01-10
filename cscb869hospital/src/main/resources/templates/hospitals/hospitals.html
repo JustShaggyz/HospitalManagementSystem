@@ -9,12 +9,12 @@
     <table th:if="${hospitals.size()>0}" class="table table-hover">
         <th>Id</th>
         <th>Name</th>
-        <th>Edit</th>
+<!--        <th>Edit</th>-->
         <th>Delete</th>
         <tr th:each="hospital : ${hospitals}">
             <td th:text="${hospital.id}"></td>
             <td th:text="${hospital.name}"></td>
-            <td><a class="btn btn-info" th:href="@{'/hospitals/edit-hospital/'+${hospital.id}}">Edit</a></td>
+<!--            <td><a class="btn btn-info" th:href="@{'/hospitals/edit-hospital/'+${hospital.id}}">Edit</a></td>   -->
             <td><a class="btn btn-danger" th:href="@{'/hospitals/delete/'+${hospital.id}}">Delete</a></td>
         </tr>
     </table>
