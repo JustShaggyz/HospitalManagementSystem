@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+<h4>Register Doctor</h4>
+<div class="col-6">
+    <form action="#" th:action="@{/doctors/create}" th:object="${doctor}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" th:field="${doctor.name}" placeholder="Name" id="name">
+            <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+        </div>
+        <div class="form-group">
+            <label for="subject">Specialty</label>
+            <select class="form-control" th:field="${doctor.specialty}" id="subject">
+                <option value="">Select Specialty</option>
+                <option th:each="specialty : ${specialties}" th:value="${specialty}" th:text="${specialty}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subject">Hospital</label>
+            <select class="form-control" th:field="${doctor.hospital}" id="hospital">
+                <option value="">Select Hospital</option>
+                <option th:each="hospital : ${hospitals}" th:value="${hospital.id}"
+                        th:text="${hospital.name}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Doctor</button>
+    </form>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.informatics.cscb869hospital.web.view.model;
+package com.informatics.cscb869hospital.web.view.model.hospital;
 
 import lombok.Getter;
 import lombok.Setter;

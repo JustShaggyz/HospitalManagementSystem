@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,4 +29,8 @@ public class Hospital extends BaseEntity{
     @JsonIgnoreProperties("hospital")
     private List<Record> records;
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

@@ -7,7 +7,7 @@ import com.informatics.cscb869hospital.dto.hospital.HospitalDTO;
 import com.informatics.cscb869hospital.dto.hospital.UpdateHospitalDTO;
 import com.informatics.cscb869hospital.services.DoctorService;
 import com.informatics.cscb869hospital.services.HospitalService;
-import com.informatics.cscb869hospital.web.view.model.CreateHospitalViewModel;
+import com.informatics.cscb869hospital.web.view.model.hospital.CreateHospitalViewModel;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
@@ -48,13 +48,13 @@ public class HospitalApiController {
     }
 
     ////////////////////////////////
-    @GetMapping("/api/doctors")
-    public List<Doctor> getDoctors() {
-        return doctorService.getDoctors();
-    }
-
-    @PostMapping("/api/doctors")
-    public Doctor createDoctor(@RequestBody Doctor doctor) {
-        return doctorService.create(doctor);
-    }
+//    @GetMapping("/api/doctors")
+//    public List<Doctor> getDoctors() {
+//        return doctorService.getDoctors();
+//    }
+//
+//    @PostMapping("/api/doctors")
+//    public Doctor createDoctor(@RequestBody Doctor doctor) {
+//        return doctorService.create(doctor);
+//    }
 }
