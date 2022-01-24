@@ -34,7 +34,13 @@ public class RecordServiceImplementation implements RecordService {
 
     @Override
     public Record create(CreateRecordDTO record) {
-        return recordRepository.save(modelMapper.map(record, Record.class));
+        List<RecordDTO> records = this.getRecords();
+        boolean recordExists = false;
+        for (RecordDTO r: records) {
+            if(r.getPatient()==record.getPatient() && r.getHospital()==record.getHospital())
+                recordExists = true;
+        }
+        return recordExists?null:recordRepository.save(modelMapper.map(record, Record.class));
     }
 
     @Override
