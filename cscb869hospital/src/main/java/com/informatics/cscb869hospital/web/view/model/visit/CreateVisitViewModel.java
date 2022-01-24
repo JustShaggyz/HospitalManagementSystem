@@ -18,7 +18,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class CreateVisitViewModel {
+    @NotNull
     private Record record;
+    @NotNull
     private Doctor doctor;
     private LocalDate visitationDate;
     @NotBlank

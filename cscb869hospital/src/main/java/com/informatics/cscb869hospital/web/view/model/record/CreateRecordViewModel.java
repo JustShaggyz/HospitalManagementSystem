@@ -7,12 +7,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 public class CreateRecordViewModel {
     private long id;
+    @NotNull
     private Patient patient;
+    @NotNull
     private Hospital hospital;
 }

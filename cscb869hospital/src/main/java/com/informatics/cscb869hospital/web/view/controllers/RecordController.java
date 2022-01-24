@@ -32,7 +32,7 @@ public class RecordController {
 
     @RequestMapping
     public String processToGetRecord(Model model) {
-        model.addAttribute("record", new CreateRecordViewModel());
+        model.addAttribute("record", new RecordViewModel());
         return "/records/get-record";
     }
 
@@ -43,7 +43,7 @@ public class RecordController {
 //        return "/records/record";
 //    }
 @PostMapping("/getrecord")
-public String getRecord(@Valid @ModelAttribute("record") CreateRecordViewModel record,
+public String getRecord(@Valid @ModelAttribute("record") RecordViewModel record,
     BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "/records";
