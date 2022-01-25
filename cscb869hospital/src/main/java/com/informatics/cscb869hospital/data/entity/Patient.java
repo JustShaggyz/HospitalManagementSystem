@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "patient")
 public class Patient extends Person{
-    private String isHealthInsured;
+    private boolean isHealthInsured;
     @ManyToOne
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;

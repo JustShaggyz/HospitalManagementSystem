@@ -15,7 +15,7 @@ public class CreatePatientDTO {
     private long id;
     private String name;
     private String egn;
-    private String isHealthInsured;
+    private boolean isHealthInsured;
     private Hospital hospital;
     private Doctor gp;
 }

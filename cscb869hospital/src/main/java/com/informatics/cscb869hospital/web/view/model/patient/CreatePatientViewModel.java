@@ -19,9 +19,7 @@ public class CreatePatientViewModel {
     private String name;
     @Pattern(regexp="^(\\s*|\\d{10})$", message = "egn must be exactly 10 digits")
     private String egn;
-    @NotBlank
-    @Size(min = 1, max = 100)
-    private String isHealthInsured;
+    private boolean isHealthInsured;
     @NotNull
     private Hospital hospital;
     @NotNull
