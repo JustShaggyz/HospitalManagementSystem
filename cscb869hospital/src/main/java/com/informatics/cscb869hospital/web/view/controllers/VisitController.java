@@ -52,7 +52,7 @@ public class VisitController {
             return "/visits/create-visit";
         }
         visitService.create(modelMapper.map(visit, CreateVisitDTO.class));
-        return "redirect:/visits";
+        return "redirect:/records";
     }
 
 
